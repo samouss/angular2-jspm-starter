@@ -26,6 +26,7 @@
     "browser-sync": "2.10.1",
     "del": "2.2.0",
     "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-hub": "0.7.1",
     "gulp-rename": "1.2.2",
     "gulp-replace": "0.5.4",
     "gulp-typescript": "2.10.0",
