@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "system",
+        "noImplicitAny": true,
+        "noEmitOnError": true
+    },
+    "filesGlob": [
+        "src/**/*.ts",
+        "!src/jspm_packages/**",
+        "!node_modules/**"
+    ],
+    "files": [
+        "src/index.ts"
+    ],
+    "compileOnSave": false,
+    "atom": {
+        "rewriteTsconfig": true
+    }
+}

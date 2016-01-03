@@ -1,0 +1,42 @@
+{
+  "name": "angular2-jspm-starter",
+  "version": "1.0.0",
+  "description": "Angular 2 starter build with JSPM, Gulp, TypeScript.",
+  "main": "src/index.js",
+  "scripts": {
+    "postinstall": "jspm install",
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samouss/angular2-jspm-starter.git"
+  },
+  "author": "Samuel Vaillant <samuel.vllnt@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samouss/angular2-jspm-starter/issues"
+  },
+  "homepage": "https://github.com/samouss/angular2-jspm-starter#readme",
+  "engines": {
+    "node": ">=v4.0.0",
+    "npm": ">=3.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "2.10.1",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-replace": "0.5.4",
+    "gulp-typescript": "2.10.0",
+    "jspm": "0.16.19",
+    "require-dir": "0.3.0"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "src"
+    },
+    "configFile": "jspm.config.js",
+    "dependencies": {
+      "angular2": "npm:angular2@^2.0.0-beta.0"
+    },
+    "devDependencies": {}
+  }
+}
