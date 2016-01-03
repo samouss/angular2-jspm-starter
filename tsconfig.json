@@ -2,18 +2,22 @@
     "compilerOptions": {
         "target": "es5",
         "module": "system",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
         "noImplicitAny": true,
-        "noEmitOnError": true
+        "noEmitOnError": false
     },
     "filesGlob": [
         "src/**/*.ts",
-        "!src/jspm_packages/**",
-        "!node_modules/**"
+        "!src/jspm_packages/**/*"
     ],
     "files": [
-        "src/index.ts"
+        "src/index.ts",
+        "src/starter/starter.component.ts"
     ],
     "compileOnSave": false,
+    "buildOnSave": false,
     "atom": {
         "rewriteTsconfig": true
     }
