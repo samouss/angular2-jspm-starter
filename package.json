@@ -29,6 +29,7 @@
     "gulp-replace": "0.5.4",
     "gulp-typescript": "2.10.0",
     "jspm": "0.16.19",
+    "merge-stream": "1.0.0",
     "require-dir": "0.3.0"
   },
   "jspm": {
