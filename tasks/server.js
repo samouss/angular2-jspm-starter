@@ -2,6 +2,7 @@
 
 const gulp = require('gulp');
 const bs = require('browser-sync').create('server');
+const argv = require('yargs').argv;
 
 gulp.task('server:reload', done => {
   bs.reload();
@@ -13,6 +14,7 @@ gulp.task('server', done => {
     server: {
       baseDir: './dist',
     },
+    open: (argv.open === undefined || argv.open) ? true : false,
   });
   done();
 });
