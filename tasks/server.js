@@ -8,10 +8,11 @@ gulp.task('server:reload', done => {
   done();
 });
 
-gulp.task('server', () => {
+gulp.task('server', done => {
   bs.init({
     server: {
       baseDir: './dist',
     },
-  })
+  });
+  done();
 });
