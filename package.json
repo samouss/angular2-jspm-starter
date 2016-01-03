@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "postinstall": "jspm install",
-    "test": "gulp test"
+    "test": "gulp test",
+    "task": "./node_modules/gulp/bin/gulp.js"
   },
   "repository": {
     "type": "git",
