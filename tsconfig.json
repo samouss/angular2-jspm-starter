@@ -9,12 +9,12 @@
         "noEmitOnError": false
     },
     "filesGlob": [
-        "src/**/*.ts",
-        "!src/jspm_packages/**/*"
+        "./src/**/*.ts",
+        "!./src/jspm_packages/**/*"
     ],
     "files": [
-        "src/index.ts",
-        "src/starter/starter.component.ts"
+        "./src/index.ts",
+        "./src/starter/starter.component.ts"
     ],
     "compileOnSave": false,
     "buildOnSave": false,
