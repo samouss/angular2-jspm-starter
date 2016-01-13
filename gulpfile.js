@@ -3,15 +3,22 @@
 const gulp = require('gulp');
 const HubRegistry = require('gulp-hub');
 
-new HubRegistry(['./tasks/*.js']);
+const hub = new HubRegistry(['./tasks/*.js']);
 
 gulp.task('default', gulp.series(
   'clean',
-  gulp.parallel('transpile', 'copy')
+  gulp.parallel('transpile:dist', 'copy:dist')
 ));
 
 gulp.task('start', gulp.series(
   'default',
   'server',
   'watch'
+));
+
+gulp.task('build', gulp.series(
+  'clean',
+  gulp.parallel('transpile:tmp', 'copy:tmp'),
+  gulp.parallel('bundle', 'copy:dist:template'),
+  gulp.parallel('template', 'clean:tmp')
 ));

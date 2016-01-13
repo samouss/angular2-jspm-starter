@@ -4,7 +4,7 @@ const gulp = require('gulp');
 const ts = require('gulp-typescript');
 const rename = require('gulp-rename');
 const bs = require('browser-sync');
-const PATHS = require('./paths').PATHS;
+const PATHS = require('./constant').PATHS;
 
 // Create TS project for incremental build and load TS configuration
 const tsProject = ts.createProject('./tsconfig.json');

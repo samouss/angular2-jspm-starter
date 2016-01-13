@@ -4,10 +4,11 @@
   "description": "Angular 2 starter build with JSPM, Gulp, TypeScript.",
   "main": "src/index.js",
   "scripts": {
-    "task": "./node_modules/gulp/bin/gulp.js",
     "postinstall": "jspm install",
+    "start": "./node_modules/gulp/bin/gulp.js start",
     "test": "./node_modules/gulp/bin/gulp.js test",
-    "start": "./node_modules/gulp/bin/gulp.js start"
+    "build": "./node_modules/gulp/bin/gulp.js build",
+    "task": "./node_modules/gulp/bin/gulp.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "browser-sync": "2.10.1",
     "del": "2.2.0",
     "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-html-replace": "1.5.5",
     "gulp-hub": "0.7.1",
     "gulp-rename": "1.2.2",
     "gulp-replace": "0.5.4",
@@ -36,6 +38,7 @@
     "merge-stream": "1.0.0",
     "require-dir": "0.3.0",
     "rxjs": "5.0.0-beta.0",
+    "systemjs-builder": "0.15.2",
     "yargs": "3.31.0"
   },
   "jspm": {

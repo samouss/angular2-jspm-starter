@@ -3,7 +3,7 @@
 const gulp = require('gulp');
 const bs = require('browser-sync').create('server');
 const argv = require('yargs').argv;
-const PATHS = require('./paths').PATHS;
+const PATHS = require('./constant').PATHS;
 
 gulp.task('server:reload', done => {
   bs.reload();

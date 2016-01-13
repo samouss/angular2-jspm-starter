@@ -3,7 +3,7 @@
 const gulp = require('gulp');
 const Stream = require('stream');
 const mergeStream = require('merge-stream');
-const PATHS = require('./paths').PATHS;
+const PATHS = require('./constant').PATHS;
 
 function copy(paths) {
   return Object.keys(paths).reduce((acc, path) => {

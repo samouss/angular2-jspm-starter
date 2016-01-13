@@ -2,7 +2,7 @@
 
 const gulp = require('gulp');
 const del = require('del');
-const PATHS = require('./paths').PATHS;
+const PATHS = require('./constant').PATHS;
 
 gulp.task('clean:dist', () => del(PATHS.DIST_PATH));
 
