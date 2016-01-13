@@ -13,8 +13,8 @@
         "!./src/jspm_packages/**/*"
     ],
     "files": [
-        "./src/index.ts",
-        "./src/starter/starter.component.ts"
+        "./src/app/starter/starter.component.ts",
+        "./src/index.ts"
     ],
     "compileOnSave": false,
     "buildOnSave": false,

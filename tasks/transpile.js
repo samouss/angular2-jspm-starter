@@ -4,6 +4,7 @@ const gulp = require('gulp');
 const ts = require('gulp-typescript');
 const rename = require('gulp-rename');
 const bs = require('browser-sync');
+const PATHS = require('./paths').PATHS;
 
 // Create TS project for incremental build and load TS configuration
 const tsProject = ts.createProject('./tsconfig.json');
@@ -13,7 +14,7 @@ const tsProject = ts.createProject('./tsconfig.json');
  * @desc   Tanspile TypeScript file and remove `src` base folder from directory
  * @return {Stream}
  */
-function transpileTS() {
+function transpileTS(destPath) {
   return tsProject.src()
     .pipe(ts(tsProject))
     .pipe(rename((path) => {
@@ -24,10 +25,10 @@ function transpileTS() {
 
       return path;
     }))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest(destPath))
     .pipe(bs.get('server').stream())
 }
 
-gulp.task('transpile:ts', transpileTS);
+gulp.task('transpile:dist', () => transpileTS(PATHS.DIST_PATH));
 
-gulp.task('transpile', gulp.parallel('transpile:ts'));
+gulp.task('transpile:tmp', () => transpileTS(PATHS.TMP_PATH));
