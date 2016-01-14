@@ -1,7 +1,6 @@
 'use strict';
 
 const gulp = require('gulp');
-const Stream = require('stream');
 const mergeStream = require('merge-stream');
 const PATHS = require('./constant').PATHS;
 
