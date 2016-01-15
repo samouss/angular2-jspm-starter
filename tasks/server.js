@@ -11,12 +11,14 @@ gulp.task('server:reload', done => {
   done();
 });
 
+
 gulp.task('server', done => {
   bs.init({
     server: {
       baseDir: PATHS.DIST_PATH,
     },
     open: (argv.open === undefined || argv.open) ? true : false,
+    port: (argv.port) ? argv.port : 3000,
   });
   done();
 });
