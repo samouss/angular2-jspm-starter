@@ -2,7 +2,6 @@
 
 const gulp = require('gulp');
 const ts = require('gulp-typescript');
-const rename = require('gulp-rename');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const bs = require('browser-sync');
@@ -22,14 +21,6 @@ function transpileTS(name, destPath) {
     ], { since: gulp.lastRun(name) })
     .pipe(plumber({errorHandler: notify.onError("TS compilation failed !")}))
     .pipe(ts(config.compilerOptions))
-    .pipe(rename((path) => {
-      path.dirname = path.dirname
-        .split('/')
-        .splice(1)
-        .join('/');
-
-      return path;
-    }))
     .pipe(gulp.dest(destPath))
     .pipe(bs.get('server').stream());
 }
