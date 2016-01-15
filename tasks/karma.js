@@ -2,6 +2,8 @@
 
 const _ = require('lodash');
 const gulp = require('gulp');
+const notify = require('gulp-notify');
+const through = require('through');
 const path = require('path');
 const Server = require('karma').Server;
 const argv = require('yargs').argv;
@@ -38,9 +40,13 @@ gulp.task('karma:watch', (done) => {
   });
 
   server.on('run_complete', (browser, results) => {
-    // if (results.error) {
-    //   gulp.src('').pipe(notify('Test failed !'));
-    // }
+    if (results.error) {
+      gulp.src('.')
+      .pipe(through(function () {
+        this.emit('error', new Error('Test failed!'))
+      }))
+      .on('error', notify.onError('<%= error.message %>'));
+    }
   });
 
   return server.start();

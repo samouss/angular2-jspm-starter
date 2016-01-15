@@ -6,7 +6,7 @@
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "noImplicitAny": true,
-        "noEmitOnError": false
+        "noEmitOnError": true
     },
     "filesGlob": [
         "./src/**/*.ts",

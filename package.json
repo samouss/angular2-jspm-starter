@@ -33,6 +33,8 @@
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-html-replace": "1.5.5",
     "gulp-hub": "0.7.1",
+    "gulp-notify": "2.2.0",
+    "gulp-plumber": "1.0.1",
     "gulp-rename": "1.2.2",
     "gulp-replace": "0.5.4",
     "gulp-typescript": "2.10.0",
@@ -50,6 +52,7 @@
     "require-dir": "0.3.0",
     "rxjs": "5.0.0-beta.0",
     "systemjs-builder": "0.15.2",
+    "through": "2.3.8",
     "yargs": "3.31.0"
   },
   "jspm": {

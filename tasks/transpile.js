@@ -3,6 +3,8 @@
 const gulp = require('gulp');
 const ts = require('gulp-typescript');
 const rename = require('gulp-rename');
+const plumber = require('gulp-plumber');
+const notify = require('gulp-notify');
 const bs = require('browser-sync');
 const PATHS = require('./constant').PATHS;
 
@@ -18,6 +20,7 @@ function transpileTS(name, destPath) {
       "./src/**/*.ts",
       "!./src/jspm_packages/**/*",
     ], { since: gulp.lastRun(name) })
+    .pipe(plumber({errorHandler: notify.onError("TS compilation failed !")}))
     .pipe(ts(config.compilerOptions))
     .pipe(rename((path) => {
       path.dirname = path.dirname
