@@ -29,7 +29,7 @@
   "devDependencies": {
     "angular2": "2.0.0-beta.0",
     "babel-polyfill": "6.3.14",
-    "browser-sync": "2.10.1",
+    "browser-sync": "2.11.0",
     "chai": "3.4.1",
     "del": "2.2.0",
     "gulp": "github:gulpjs/gulp#4.0",
@@ -39,7 +39,7 @@
     "gulp-plumber": "1.0.1",
     "gulp-replace": "0.5.4",
     "gulp-typescript": "2.10.0",
-    "jspm": "0.16.19",
+    "jspm": "0.16.23",
     "karma": "0.13.19",
     "karma-chai": "0.1.0",
     "karma-jspm": "2.0.2",
@@ -52,7 +52,7 @@
     "phantomjs": "1.9.19",
     "require-dir": "0.3.0",
     "rxjs": "5.0.0-beta.0",
-    "systemjs-builder": "0.15.2",
+    "systemjs-builder": "0.15.3",
     "through": "2.3.8",
     "yargs": "3.31.0"
   },
