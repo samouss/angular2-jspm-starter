@@ -9,3 +9,11 @@ gulp.task('watch', () => {
   gulp.watch('./src/**.html', gulp.series('copy:dist:template', 'server:reload'));
 
 });
+
+gulp.task('watch:test', (done) => {
+
+  gulp.watch('./src/**.ts', gulp.series('transpile:tmp'));
+
+  done();
+
+});

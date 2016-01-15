@@ -33,16 +33,17 @@ gulp.task('karma:watch', (done) => {
     singleRun: false,
     watch: true,
     jspm: _.assign(jspmConfig, fileOveride),
-  }), done);
+  }), () => {
+    done();
+  });
 
   server.on('run_complete', (browser, results) => {
-    console.log('complete');
     // if (results.error) {
     //   gulp.src('').pipe(notify('Test failed !'));
     // }
   });
 
-  server.start();
+  return server.start();
 });
 
 /**

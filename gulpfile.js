@@ -31,3 +31,12 @@ gulp.task('test', gulp.series(
   // Hack for kill the process
   'exit'
 ));
+
+gulp.task('test:watch', gulp.series(
+  'clean:tmp',
+  gulp.parallel('transpile:tmp', 'copy:tmp'),
+  'watch:test',
+  'karma:watch',
+  'clean:tmp',
+  'exit'
+));
