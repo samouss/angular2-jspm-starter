@@ -6,9 +6,11 @@
   "scripts": {
     "postinstall": "jspm install",
     "start": "./node_modules/gulp/bin/gulp.js start",
+    "start:prod": "npm run build && ./node_modules/gulp/bin/gulp.js server",
     "test": "./node_modules/gulp/bin/gulp.js test",
+    "test:watch": "./node_modules/gulp/bin/gulp.js test:watch",
     "build": "./node_modules/gulp/bin/gulp.js build",
-    "task": "./node_modules/gulp/bin/gulp.js"
+    "gulp": "./node_modules/gulp/bin/gulp.js"
   },
   "repository": {
     "type": "git",
