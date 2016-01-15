@@ -22,3 +22,12 @@ gulp.task('build', gulp.series(
   gulp.parallel('bundle', 'copy:dist:template'),
   gulp.parallel('template', 'clean:tmp')
 ));
+
+gulp.task('test', gulp.series(
+  'clean:tmp',
+  gulp.parallel('transpile:tmp', 'copy:tmp'),
+  'karma',
+  'clean:tmp',
+  // Hack for kill the process
+  'exit'
+));

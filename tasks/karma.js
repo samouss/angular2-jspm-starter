@@ -20,10 +20,7 @@ const jspmConfig = {
 function buildServer(options, done) {
   return new Server(_.assign({
     configFile: path.join(__dirname + '/../karma.conf.js')
-  }, options), () => {
-    done();
-    process.exit();
-  });
+  }, options), done);
 }
 
 /**
@@ -52,6 +49,5 @@ gulp.task('karma:watch', (done) => {
  * Run test once and exit
  */
 gulp.task('karma', (done) => {
-  const server = buildServer({ jspm: jspmConfig }, done);
-  server.start();
+  return buildServer({ jspm: jspmConfig }, done).start();
 });
