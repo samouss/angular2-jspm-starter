@@ -38,6 +38,7 @@
     "gulp-notify": "2.2.0",
     "gulp-plumber": "1.0.1",
     "gulp-replace": "0.5.4",
+    "gulp-sourcemaps": "1.6.0",
     "gulp-typescript": "2.10.0",
     "jspm": "0.16.23",
     "karma": "0.13.19",

@@ -13,6 +13,7 @@ gulp.task('bundle', () => {
   return builder.buildStatic('index', path.join(PATHS.DIST_PATH, BUNDLE.NAME_BUNDLE), {
     mangle: true,
     sourceMaps: true,
+    lowResSourceMaps: true,
     inject: true,
     minify: true,
   });
