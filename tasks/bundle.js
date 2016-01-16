@@ -11,10 +11,10 @@ gulp.task('bundle', () => {
   const builder = new Builder(PATHS.TMP_PATH, 'jspm.config.js');
 
   return builder.buildStatic('index', path.join(PATHS.DIST_PATH, BUNDLE.NAME_BUNDLE), {
-    mangle: true,
-    sourceMaps: true,
-    lowResSourceMaps: true,
-    inject: true,
     minify: true,
+    mangle: true,
+    sourceMaps: 'inline',
+    lowResSourceMaps: true,
+    runtime: false,
   });
 });
