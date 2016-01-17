@@ -15,12 +15,14 @@
 
   <starter></starter>
 
-  <script src="https://code.angularjs.org/2.0.0-beta.1/angular2-polyfills.min.js"></script>
-
   <!-- build:js -->
   <script src="./jspm_packages/system.js"></script>
   <script src="./jspm.config.js"></script>
-  <script>System.import('index.js');</script>
+  <script>
+    System.import('angular2/bundles/angular2-polyfills.min.js').then(function() {
+      return System.import('index.js');
+    });
+  </script>
   <!-- endbuild -->
 </body>
 </html>
