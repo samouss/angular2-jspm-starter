@@ -15,13 +15,13 @@
 
   <starter></starter>
 
+  <script src="./angular2-polyfills.min.js"></script>
+
   <!-- build:js -->
   <script src="./jspm_packages/system.js"></script>
   <script src="./jspm.config.js"></script>
   <script>
-    System.import('angular2/bundles/angular2-polyfills.min.js').then(function() {
-      return System.import('index.js');
-    });
+    System.import('index.js');
   </script>
   <!-- endbuild -->
 </body>

@@ -69,6 +69,15 @@
     },
     "devDependencies": {
       "clean-css": "npm:clean-css@^3.4.9"
+    },
+    "overrides": {
+      "npm:angular2@2.0.0-beta.1": {
+        "shim": {
+          "bundles/angular2-polyfills.min": {
+            "format": "global"
+          }
+        }
+      }
     }
   }
 }
