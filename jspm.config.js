@@ -12,6 +12,7 @@ System.config({
     "bootstrap": "github:twbs/bootstrap@3.3.6",
     "clean-css": "npm:clean-css@3.4.9",
     "css": "github:systemjs/plugin-css@0.1.20",
+    "rxjs": "npm:rxjs@5.0.0-beta.1",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
@@ -77,7 +78,7 @@ System.config({
       "es6-shim": "npm:es6-shim@0.33.13",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "reflect-metadata": "npm:reflect-metadata@0.1.2",
-      "rxjs": "npm:rxjs@5.0.0-beta.0",
+      "rxjs": "npm:rxjs@5.0.0-beta.1",
       "zone.js": "npm:zone.js@0.5.10"
     },
     "npm:asn1.js@4.3.0": {
@@ -323,7 +324,7 @@ System.config({
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:rxjs@5.0.0-beta.0": {
+    "npm:rxjs@5.0.0-beta.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },

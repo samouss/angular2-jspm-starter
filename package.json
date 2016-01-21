@@ -27,7 +27,7 @@
     "npm": ">=3.0.0"
   },
   "devDependencies": {
-    "angular2": "2.0.0-beta.0",
+    "angular2": "2.0.0-beta.1",
     "babel-polyfill": "6.3.14",
     "browser-sync": "2.11.0",
     "chai": "3.4.1",
@@ -53,7 +53,7 @@
     "mocha": "2.3.4",
     "phantomjs": "1.9.19",
     "require-dir": "0.3.0",
-    "rxjs": "5.0.0-beta.0",
+    "rxjs": "5.0.0-beta.1",
     "systemjs-builder": "0.15.3",
     "through": "2.3.8",
     "tslint": "3.2.2",
@@ -67,7 +67,8 @@
     "dependencies": {
       "angular2": "npm:angular2@^2.0.0-beta.1",
       "bootstrap": "github:twbs/bootstrap@^3.3.6",
-      "css": "github:systemjs/plugin-css@^0.1.20"
+      "css": "github:systemjs/plugin-css@^0.1.20",
+      "rxjs": "npm:rxjs@^5.0.0-beta.1"
     },
     "devDependencies": {
       "clean-css": "npm:clean-css@^3.4.9"
