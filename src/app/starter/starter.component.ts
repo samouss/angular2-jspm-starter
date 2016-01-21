@@ -18,7 +18,7 @@ import GistService from '../services/gist.service';
     </div>
   `,
 })
-export default class AppComponent {
+export default class StarterComponent {
 
   /**
    * @name name
