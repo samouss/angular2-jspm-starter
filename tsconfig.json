@@ -13,6 +13,7 @@
         "!./src/jspm_packages/**/*"
     ],
     "files": [
+        "./src/app/services/gist.service.ts",
         "./src/app/starter/starter.component.spec.ts",
         "./src/app/starter/starter.component.ts",
         "./src/index.ts"
