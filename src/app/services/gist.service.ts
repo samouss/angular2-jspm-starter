@@ -6,13 +6,6 @@ import { Observable } from 'rxjs/Rx';
 export default class GistService {
 
   /**
-   * @name API_ENDPOINT
-   * @desc Endpoit for Github API
-   * @type {string}
-   */
-  API_ENDPOINT: string = 'https://api.github.com';
-
-  /**
    * @constructor
    * @param  {Http} _http
    */
@@ -24,17 +17,8 @@ export default class GistService {
    */
   getGists(): Observable<any> {
     return this._http
-      .get(this.buildURL('/gists'))
+      .get('https://api.github.com/gists')
       .map((res) => res.json());
-  }
-
-  /**
-   * @name   buildURL
-   * @param  {string} url
-   * @return {string}
-   */
-  private buildURL(url: string): string {
-    return this.API_ENDPOINT + url;
   }
 
 }
