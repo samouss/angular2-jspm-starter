@@ -8,11 +8,11 @@ import GistService from '../services/gist.service';
     <div class="container">
       <div class="jumbotron">
         <h2>{{ name }}</h2>
-        <button (click)="getGistsAuthor()" class="btn btn-info">Click and see the console !</button>
+        <button (click)="getGistsAuthors()" class="btn btn-info">Click for load 10 last gists authors !</button>
       </div>
-      <div class="jumbotron">
+      <div *ngIf="gistsAuthors.length" class="jumbotron">
         <ul>
-          <li *ngFor="#author of gistsAuthor">{{ author }}</li>
+          <li *ngFor="#author of gistsAuthors">{{ author }}</li>
         </ul>
       </div>
     </div>
@@ -24,13 +24,13 @@ export default class StarterComponent {
    * @name name
    * @type {string}
    */
-  name: string = 'Github Gists';
+  name: string = 'Github Gists Authors';
 
   /**
-   * @name gistsAuthor
+   * @name gistsAuthors
    * @type {Array<string>}
    */
-  gistsAuthor: Array<string> = [];
+  gistsAuthors: Array<string> = [];
 
   /**
    * @constructor
@@ -42,7 +42,7 @@ export default class StarterComponent {
    * @name   getGists
    * @return {void}
    */
-  getGistsAuthor(): void {
+  getGistsAuthors(): void {
     this._GistService.getGists()
       .map((res: any) => {
         return res
@@ -50,7 +50,7 @@ export default class StarterComponent {
           .map((res: any) => res.owner.login);
       })
       .subscribe((res: any) => {
-        this.gistsAuthor = res;
+        this.gistsAuthors = this.gistsAuthors.concat(res);
       });
   }
 
