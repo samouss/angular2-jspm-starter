@@ -3,6 +3,7 @@
 const gulp = require('gulp');
 const ts = require('gulp-typescript');
 const tslint = require('gulp-tslint');
+const changed = require('gulp-changed');
 const plumber = require('gulp-plumber');
 const sourcemaps = require('gulp-sourcemaps');
 const notify = require('gulp-notify');
@@ -16,21 +17,22 @@ const files = [
 const config = require('../tsconfig.json');
 
 /**
- * @name   transpileTS
- * @desc   Tanspile TypeScript file
- * @return {Stream}
- */
- function transpileTS(name, destPath) {
-   return function transpileTS() {
-     return gulp.src(files, { since: gulp.lastRun(name) })
-       .pipe(plumber({errorHandler: notify.onError("TS compilation failed !")}))
-       .pipe(sourcemaps.init())
-         .pipe(ts(config.compilerOptions))
-       .pipe(sourcemaps.write())
-       .pipe(gulp.dest(destPath))
-       .pipe(bs.get('server').stream());
-   }
- }
+* @name   transpileTS
+* @desc   Tanspile TypeScript file
+* @return {Stream}
+*/
+function transpileTS(name, destPath) {
+  return function transpileTS() {
+    return gulp.src(files)
+      .pipe(changed(destPath, { extension: '.js' }))
+      .pipe(plumber({errorHandler: notify.onError("TS compilation failed !")}))
+      .pipe(sourcemaps.init())
+      .pipe(ts(config.compilerOptions))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest(destPath))
+      .pipe(bs.get('server').stream());
+  }
+}
 
 /**
  * @name   lintTS
@@ -39,7 +41,7 @@ const config = require('../tsconfig.json');
  */
 function lintTS(name) {
   return function lintTS() {
-    return gulp.src(files, { since: gulp.lastRun(name) })
+    return gulp.src(files.concat('!./src/typings/**/*'), { since: gulp.lastRun(name) })
       .pipe(plumber({errorHandler: notify.onError("TS linting failed !")}))
       .pipe(tslint())
       .pipe(tslint.report('prose'));

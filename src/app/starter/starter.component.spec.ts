@@ -1,6 +1,4 @@
 /* tslint:disable:no-unused-variable */
-declare const chai:any;
-
 import StarterComponent from './starter.component';
 
 const expect = chai.expect;

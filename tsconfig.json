@@ -16,7 +16,10 @@
         "./src/app/services/gist.service.ts",
         "./src/app/starter/starter.component.spec.ts",
         "./src/app/starter/starter.component.ts",
-        "./src/index.ts"
+        "./src/index.ts",
+        "./src/typings/chai.d.ts",
+        "./src/typings/es6-shim.d.ts",
+        "./src/typings/mocha.d.ts"
     ],
     "compileOnSave": false,
     "buildOnSave": false,
