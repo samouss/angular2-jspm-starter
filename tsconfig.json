@@ -2,11 +2,19 @@
     "compilerOptions": {
         "target": "es5",
         "module": "system",
-        "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "noImplicitAny": true,
-        "noEmitOnError": true
+        "noEmitOnError": true,
+        "baseUrl": "./src",
+        "paths": {
+            "angular2/*": [
+                "./jspm_packages/npm/angular2@2.0.0-beta.8/*"
+            ],
+            "rxjs/*": [
+                "./jspm_packages/npm/rxjs@5.0.0-beta.2/*"
+            ]
+        }
     },
     "filesGlob": [
         "./src/**/*.ts",

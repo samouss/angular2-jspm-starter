@@ -1,6 +1,7 @@
 'use strict';
 
 const gulp = require('gulp');
+const _ = require('lodash');
 const ts = require('gulp-typescript');
 const tslint = require('gulp-tslint');
 const changed = require('gulp-changed');
@@ -27,7 +28,7 @@ function transpileTS(name, destPath) {
       .pipe(changed(destPath, { extension: '.js' }))
       .pipe(plumber({errorHandler: notify.onError("TS compilation failed !")}))
       .pipe(sourcemaps.init())
-      .pipe(ts(config.compilerOptions))
+      .pipe(ts(_.assign({}, config.compilerOptions, { typescript: require('typescript') })))
       .pipe(sourcemaps.write())
       .pipe(gulp.dest(destPath))
       .pipe(bs.get('server').stream());
@@ -43,7 +44,9 @@ function lintTS(name) {
   return function lintTS() {
     return gulp.src(files.concat('!./src/typings/**/*'), { since: gulp.lastRun(name) })
       .pipe(plumber({errorHandler: notify.onError("TS linting failed !")}))
-      .pipe(tslint())
+      .pipe(tslint({
+        tslint: require('tslint'),
+      }))
       .pipe(tslint.report('prose'));
   };
 }
